@@ -1,0 +1,10 @@
+coverage/
+node_modules/
+__tests__/
+*.eslintcache
+*.db
+*.log
+*.zip
+*.txt
+*.test.ts
+*.test.tsx
