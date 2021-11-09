@@ -33,6 +33,24 @@ const MyComponent = () => {
 export default MyComponent;
 ```
 
+# Development
+
+In order to start developing, run the build in watch mode.
+
+## Setup
+
+```Shell
+npm install           # install dependencies
+npm run build:watch   # start watcher
+```
+
+## Publishing
+
+```Shell
+npm run release     # reinstall & rebuild everything from scratch and...
+                    # ...and run a wizard that'll guide you through publishing the npm package
+```
+
 ----
 
 Brought to you by [Prezly](https://www.prezly.com/?utm_source=github&utm_campaign=@prezly/docx-cleaner).
