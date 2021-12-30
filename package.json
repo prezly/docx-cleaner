@@ -5,7 +5,7 @@
     "license": "MIT",
     "type": "module",
     "main": "build/cjs/index.cjs",
-    "module": "build/esm/index.mnjs",
+    "module": "build/esm/index.mjs",
     "types": "build/types/index.d.ts",
     "exports": {
         ".": {
