@@ -40,13 +40,13 @@
         "test:build": "npm run test:cjs && npm run test:esm",
         "test:esm": "node mockDOMParser.js build/esm/index.mjs",
         "test:cjs": "node mockDOMParser.js build/cjs/index.cjs",
-        "check": "npm run prettier && npm run lint && npm run test",
+        "check": "npm run prettier && npm run lint",
         "clean": "rimraf build/ node_modules/",
         "lint": "eslint ./src --ext .ts",
         "prettier": "prettier --check './**/*.(js|ts)'",
         "prettier:fix": "npm run prettier -- --write --no-list-different",
         "release": "npm run release:prepare && npm run release:publish",
-        "release:prepare": "npm run clean && npm install && npm run build && npm run check",
+        "release:prepare": "npm run clean && npm install && npm run build && npm run check && npm run test",
         "release:publish": "np"
     },
     "engines": {
