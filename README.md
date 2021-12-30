@@ -14,7 +14,7 @@ import { cleanDocx } from '@prezly/docx-cleaner';
 const MyComponent = () => {
     const [value, setValue] = useState<string>('');
 
-    const handlePaste = (event: ClipboardEvent<HTMLTextAreaElement>) => {
+    function handlePaste(event: ClipboardEvent<HTMLTextAreaElement>) {
         const html = event.clipboardData.getData('text/html');
         const rtf = event.clipboardData.getData('text/rtf');
 
