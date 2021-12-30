@@ -1,0 +1,1 @@
+global.DOMParser = function () {};

@@ -1,0 +1,9 @@
+{
+    "presets": [
+        "@babel/preset-typescript",
+        ["@babel/preset-env", { "useBuiltIns": false, "modules": "commonjs" }]
+    ],
+    "plugins": [
+        ["babel-plugin-add-import-extension", { "extension": "cjs" }]
+    ]
+}

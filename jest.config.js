@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     coveragePathIgnorePatterns: ['/node_modules/', '/build/'],
     globals: {
         'ts-jest': {
