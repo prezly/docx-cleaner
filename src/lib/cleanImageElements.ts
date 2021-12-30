@@ -1,4 +1,4 @@
-import isURL from 'validator/lib/isURL';
+import isURL from 'validator/lib/isURL.js';
 
 import { getRtfImagesMap } from './getRtfImagesMap';
 import { getVShapeSpid } from './getVShapeSpid';
