@@ -49,10 +49,6 @@
         "release:prepare": "npm run clean && npm install && npm run build && npm run check && npm run test",
         "release:publish": "np"
     },
-    "engines": {
-        "node": ">=14.0",
-        "npm": "~7.0"
-    },
     "dependencies": {
         "validator": "^13.5.2"
     },
