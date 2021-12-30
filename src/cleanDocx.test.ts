@@ -1,4 +1,4 @@
-import cleanDocx from './cleanDocx';
+import { cleanDocx } from './cleanDocx';
 import { readTestFile } from './test-utils';
 
 describe('cleanDocx', () => {
