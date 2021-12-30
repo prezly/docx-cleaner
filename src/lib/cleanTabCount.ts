@@ -1,6 +1,6 @@
-import generateSpaces from './generateSpaces';
+import { generateSpaces } from './generateSpaces';
 
-const cleanTabCount = (element: Element): void => {
+export function cleanTabCount(element: Element): void {
     const styleAttribute = element.getAttribute('style') || '';
 
     if (!styleAttribute.startsWith('mso-tab-count:')) {
@@ -14,6 +14,4 @@ const cleanTabCount = (element: Element): void => {
     if (element.parentNode) {
         element.parentNode.replaceChild(replacementNode, element);
     }
-};
-
-export default cleanTabCount;
+}

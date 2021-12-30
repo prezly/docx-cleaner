@@ -1,9 +1,9 @@
-import isText from './isText';
-import traverse from './traverse';
+import { isText } from './isText';
+import { traverse } from './traverse';
 
 type Callback = (node: Text) => boolean;
 
-const traverseTexts = (rootNode: Node, callback: Callback): void => {
+export function traverseTexts(rootNode: Node, callback: Callback): void {
     traverse(rootNode, (node) => {
         if (!isText(node)) {
             return true;
@@ -11,6 +11,4 @@ const traverseTexts = (rootNode: Node, callback: Callback): void => {
 
         return callback(node);
     });
-};
-
-export default traverseTexts;
+}

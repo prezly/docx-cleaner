@@ -1,18 +1,18 @@
 /* eslint-disable no-continue */
 
-import getListContentHtml from './getListContentHtml';
-import getListLevel from './getListLevel';
-import isBookmark from './isBookmark';
-import isList from './isList';
-import isOrderedList from './isOrderedList';
-import parseHtmlElement from './parseHtmlElement';
+import { getListContentHtml } from './getListContentHtml';
+import { getListLevel } from './getListLevel';
+import { isBookmark } from './isBookmark';
+import { isList } from './isList';
+import { isOrderedList } from './isOrderedList';
+import { parseHtmlElement } from './parseHtmlElement';
 
 interface Result {
     list: Element | null;
     nextSibling: Element | null;
 }
 
-const buildList = (element: Element): Result => {
+export function buildList(element: Element): Result {
     const listLevel = getListLevel(element);
     let listHtml = '';
     let nextSibling: Element | null = element;
@@ -55,6 +55,4 @@ const buildList = (element: Element): Result => {
     const list = parseHtmlElement(`<${listTagName}>${listHtml}</${listTagName}>`);
 
     return { list, nextSibling };
-};
-
-export default buildList;
+}

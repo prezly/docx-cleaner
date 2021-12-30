@@ -1,4 +1,4 @@
-const isList = (element: Element): boolean => {
+export function isList(element: Element): boolean {
     const styleAttribute = element.getAttribute('style');
 
     if (!styleAttribute) {
@@ -18,6 +18,4 @@ const isList = (element: Element): boolean => {
     }
 
     return element.outerHTML.includes('<!--[if !supportLists]-->');
-};
-
-export default isList;
+}

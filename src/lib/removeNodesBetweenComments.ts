@@ -1,8 +1,10 @@
-import isComment from './isComment';
-import traverseComments from './traverseComments';
+import { isComment } from './isComment';
+import { traverseComments } from './traverseComments';
 
-const removeNodesBetweenComments = (rootNode: Node, start: string, end: string): void => {
-    const isClosingComment = (node: Node) => isComment(node) && node.data === end;
+export function removeNodesBetweenComments(rootNode: Node, start: string, end: string): void {
+    function isClosingComment(node: Node): boolean {
+        return isComment(node) && node.data === end;
+    }
 
     traverseComments(rootNode, (comment) => {
         if (comment.data === start) {
@@ -23,6 +25,4 @@ const removeNodesBetweenComments = (rootNode: Node, start: string, end: string):
 
         return true;
     });
-};
-
-export default removeNodesBetweenComments;
+}

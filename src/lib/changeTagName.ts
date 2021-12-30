@@ -1,4 +1,4 @@
-const changeTagName = (element: Element, tagName: string): Element => {
+export function changeTagName(element: Element, tagName: string): Element {
     const newElement = document.createElement(tagName);
 
     newElement.innerHTML = element.innerHTML;
@@ -16,6 +16,4 @@ const changeTagName = (element: Element, tagName: string): Element => {
     }
 
     return newElement;
-};
-
-export default changeTagName;
+}

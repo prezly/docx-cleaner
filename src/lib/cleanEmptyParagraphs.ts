@@ -2,24 +2,26 @@
 
 import { NO_BREAK_SPACE } from '../constants';
 
-import traverseElements from './traverseElements';
+import { traverseElements } from './traverseElements';
 
-const isEmptyOp = (element: Element): boolean =>
-    element.nodeName === 'O:P' && element.textContent === NO_BREAK_SPACE;
+function isEmptyOp(element: Element): boolean {
+    return element.nodeName === 'O:P' && element.textContent === NO_BREAK_SPACE;
+}
 
-const isEmpty = (element: Element): boolean =>
-    element.children.length === 1 &&
-    element.firstElementChild !== null &&
-    (isEmptyOp(element.firstElementChild) || isEmpty(element.firstElementChild));
+function isEmpty(element: Element): boolean {
+    return (
+        element.children.length === 1 &&
+        element.firstElementChild !== null &&
+        (isEmptyOp(element.firstElementChild) || isEmpty(element.firstElementChild))
+    );
+}
 
-const cleanEmptyParagraphs = (rootNode: Node): void => {
-    traverseElements(rootNode, (element) => {
+export function cleanEmptyParagraphs(rootNode: Node): void {
+    return traverseElements(rootNode, (element) => {
         if (element.tagName === 'P' && isEmpty(element)) {
             element.innerHTML = '';
         }
 
         return true;
     });
-};
-
-export default cleanEmptyParagraphs;
+}

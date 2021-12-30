@@ -1,3 +1,3 @@
-const isText = (node: Node): node is Text => node.nodeType === Node.TEXT_NODE;
-
-export default isText;
+export function isText(node: Node): node is Text {
+    return node.nodeType === Node.TEXT_NODE;
+}

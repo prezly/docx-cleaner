@@ -1,8 +1,8 @@
-import isFragmentHref from './isFragmentHref';
-import traverseElements from './traverseElements';
-import unwrapElement from './unwrapElement';
+import { isFragmentHref } from './isFragmentHref';
+import { traverseElements } from './traverseElements';
+import { unwrapElement } from './unwrapElement';
 
-const cleanLinkElements = (rootNode: Node): void => {
+export function cleanLinkElements(rootNode: Node): void {
     traverseElements(rootNode, (element) => {
         if (element.tagName !== 'A') {
             return true;
@@ -24,6 +24,4 @@ const cleanLinkElements = (rootNode: Node): void => {
 
         return true;
     });
-};
-
-export default cleanLinkElements;
+}

@@ -17,7 +17,7 @@ import {
 
 const parser = new DOMParser();
 
-const cleanDocx = (html: string, rtf: string): string => {
+export function cleanDocx(html: string, rtf: string): string {
     const document = parser.parseFromString(preCleanHtml(html), 'text/html');
     const { body } = document;
 
@@ -38,6 +38,4 @@ const cleanDocx = (html: string, rtf: string): string => {
     cleanListElements(body);
 
     return postCleanHtml(body.innerHTML);
-};
-
-export default cleanDocx;
+}

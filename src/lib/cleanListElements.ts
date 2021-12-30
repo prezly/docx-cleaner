@@ -1,8 +1,8 @@
-import buildList from './buildList';
-import isList from './isList';
-import traverseElements from './traverseElements';
+import { buildList } from './buildList';
+import { isList } from './isList';
+import { traverseElements } from './traverseElements';
 
-const cleanListElements = (rootNode: Node): void => {
+export function cleanListElements(rootNode: Node): void {
     traverseElements(rootNode, (element) => {
         const styleAttribute = element.getAttribute('style');
 
@@ -45,6 +45,4 @@ const cleanListElements = (rootNode: Node): void => {
 
         return false;
     });
-};
-
-export default cleanListElements;
+}

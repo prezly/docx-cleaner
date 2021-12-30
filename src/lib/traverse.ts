@@ -6,7 +6,7 @@ type Callback = (node: Node) => boolean;
  *
  * @param callback returns a boolean indicating whether traversal should be continued
  */
-const traverse = (node: Node, callback: Callback): void => {
+export function traverse(node: Node, callback: Callback): void {
     const keepTraversing = callback(node);
 
     if (!keepTraversing) {
@@ -57,6 +57,4 @@ const traverse = (node: Node, callback: Callback): void => {
             }
         }
     }
-};
-
-export default traverse;
+}

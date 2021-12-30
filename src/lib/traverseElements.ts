@@ -1,9 +1,9 @@
-import isElement from './isElement';
-import traverse from './traverse';
+import { isElement } from './isElement';
+import { traverse } from './traverse';
 
 type Callback = (node: Element) => boolean;
 
-const traverseElements = (rootNode: Node, callback: Callback): void => {
+export function traverseElements(rootNode: Node, callback: Callback): void {
     traverse(rootNode, (node) => {
         if (!isElement(node)) {
             return true;
@@ -11,6 +11,4 @@ const traverseElements = (rootNode: Node, callback: Callback): void => {
 
         return callback(node);
     });
-};
-
-export default traverseElements;
+}

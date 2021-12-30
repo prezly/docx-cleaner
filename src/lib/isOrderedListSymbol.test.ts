@@ -1,6 +1,6 @@
 import { NO_BREAK_SPACE, SPACE } from '../constants';
 
-import isOrderedListSymbol from './isOrderedListSymbol';
+import { isOrderedListSymbol } from './isOrderedListSymbol';
 
 describe('isOrderedListSymbol', () => {
     it('Recognizes symbols of unordered lists', () => {

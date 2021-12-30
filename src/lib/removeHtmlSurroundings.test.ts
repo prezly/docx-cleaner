@@ -1,4 +1,4 @@
-import removeHtmlSurroundings from './removeHtmlSurroundings';
+import { removeHtmlSurroundings } from './removeHtmlSurroundings';
 
 describe('removeHtmlSurroundings', () => {
     it('Does nothing when there is nothing around <html>', () => {

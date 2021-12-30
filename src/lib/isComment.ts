@@ -1,3 +1,3 @@
-const isComment = (node: Node): node is Comment => node.nodeType === Node.COMMENT_NODE;
-
-export default isComment;
+export function isComment(node: Node): node is Comment {
+    return node.nodeType === Node.COMMENT_NODE;
+}

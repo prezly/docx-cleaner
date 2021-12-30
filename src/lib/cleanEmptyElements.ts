@@ -1,12 +1,12 @@
-import traverseElements from './traverseElements';
+import { traverseElements } from './traverseElements';
 
 const ALLOWED_EMPTY_ELEMENTS = ['BR', 'IMG'];
 
-const isEmpty = (element: Element): boolean => {
+function isEmpty(element: Element): boolean {
     return !ALLOWED_EMPTY_ELEMENTS.includes(element.nodeName) && !element.innerHTML.trim();
-};
+}
 
-const removeIfEmpty = (element: Element): void => {
+function removeIfEmpty(element: Element): void {
     if (isEmpty(element)) {
         const { parentElement } = element;
 
@@ -16,13 +16,11 @@ const removeIfEmpty = (element: Element): void => {
             removeIfEmpty(parentElement);
         }
     }
-};
+}
 
-const cleanEmptyElements = (rootNode: Node): void => {
+export function cleanEmptyElements(rootNode: Node): void {
     traverseElements(rootNode, (element) => {
         removeIfEmpty(element);
         return true;
     });
-};
-
-export default cleanEmptyElements;
+}

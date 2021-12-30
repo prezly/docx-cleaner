@@ -1,6 +1,8 @@
-const acceptNode = () => NodeFilter.FILTER_ACCEPT;
+function acceptNode() {
+    return NodeFilter.FILTER_ACCEPT;
+}
 
-const getComments = (node: Node): string[] => {
+export function getComments(node: Node): string[] {
     const comments: string[] = [];
     const iterator = document.createNodeIterator(node, NodeFilter.SHOW_COMMENT, { acceptNode });
     let currentNode = iterator.nextNode();
@@ -14,6 +16,4 @@ const getComments = (node: Node): string[] => {
     }
 
     return comments;
-};
-
-export default getComments;
+}

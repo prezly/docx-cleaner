@@ -1,3 +1,3 @@
-const isFragmentHref = (href: string): boolean => href.startsWith('#');
-
-export default isFragmentHref;
+export function isFragmentHref(href: string): boolean {
+    return href.startsWith('#');
+}

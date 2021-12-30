@@ -2,9 +2,9 @@
 
 import { CARRIAGE_RETURN, LINE_FEED, NO_BREAK_SPACE, SPACE } from '../constants';
 
-import traverseTexts from './traverseTexts';
+import { traverseTexts } from './traverseTexts';
 
-const cleanTextNodes = (rootNode: Node): void => {
+export function cleanTextNodes(rootNode: Node): void {
     traverseTexts(rootNode, (textNode) => {
         if (
             /^\n\s*$/.test(textNode.data) &&
@@ -61,6 +61,4 @@ const cleanTextNodes = (rootNode: Node): void => {
 
         return true;
     });
-};
-
-export default cleanTextNodes;
+}

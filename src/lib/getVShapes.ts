@@ -1,8 +1,8 @@
-import getComments from './getComments';
+import { getComments } from './getComments';
 
 const parser = new DOMParser();
 
-const getVShapes = (document: Document): Record<string, string> => {
+export function getVShapes(document: Document): Record<string, string> {
     const comments = getComments(document);
 
     return comments.reduce<Record<string, string>>((vShapesMap, comment) => {
@@ -25,6 +25,4 @@ const getVShapes = (document: Document): Record<string, string> => {
 
         return vShapesMap;
     }, {});
-};
-
-export default getVShapes;
+}

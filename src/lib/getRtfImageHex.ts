@@ -1,6 +1,6 @@
 import { SPACE } from '../constants';
 
-const getRtfImageHex = (imageData: string): string | null => {
+export function getRtfImageHex(imageData: string): string | null {
     const [, bliptagData = ''] = imageData.split('bliptag');
     const bracketSplit = bliptagData.split('}');
 
@@ -21,6 +21,4 @@ const getRtfImageHex = (imageData: string): string | null => {
     }
 
     return spaceSplit.slice(1).join('');
-};
-
-export default getRtfImageHex;
+}

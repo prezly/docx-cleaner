@@ -1,4 +1,4 @@
-const getListLevel = (element: Element): number => {
+export function getListLevel(element: Element): number {
     const styleAttribute = element.getAttribute('style') || '';
     const matches = styleAttribute.match(/level(\d+)/im);
 
@@ -8,6 +8,4 @@ const getListLevel = (element: Element): number => {
     }
 
     return 1;
-};
-
-export default getListLevel;
+}

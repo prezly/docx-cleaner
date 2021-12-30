@@ -1,14 +1,14 @@
-import isFootnote from './isFootnote';
-import traverseElements from './traverseElements';
+import { isFootnote } from './isFootnote';
+import { traverseElements } from './traverseElements';
 
 /**
  * Gets "4" from "[4]", "A" from "[A]", etc.
  */
-const extractFootnoteNumber = (footnote: Element): string => {
+function extractFootnoteNumber(footnote: Element): string {
     return (footnote.textContent || '').trim().replace(/[[\]]/g, '');
-};
+}
 
-const cleanFootnotes = (rootNode: Node): void => {
+export function cleanFootnotes(rootNode: Node): void {
     traverseElements(rootNode, (element) => {
         if (isFootnote(element)) {
             const footnoteReplacement = document.createElement('sup');
@@ -23,6 +23,4 @@ const cleanFootnotes = (rootNode: Node): void => {
 
         return true;
     });
-};
-
-export default cleanFootnotes;
+}

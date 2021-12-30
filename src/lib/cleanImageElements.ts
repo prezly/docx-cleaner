@@ -1,11 +1,11 @@
 import isURL from 'validator/lib/isURL';
 
-import getRtfImagesMap from './getRtfImagesMap';
-import getVShapeSpid from './getVShapeSpid';
-import hexToBase64 from './hexToBase64';
-import traverseElements from './traverseElements';
+import { getRtfImagesMap } from './getRtfImagesMap';
+import { getVShapeSpid } from './getVShapeSpid';
+import { hexToBase64 } from './hexToBase64';
+import { traverseElements } from './traverseElements';
 
-const cleanImageElements = (document: Document, rtf: string, rootNode: Node): void => {
+export function cleanImageElements(document: Document, rtf: string, rootNode: Node): void {
     if (!rtf) {
         return;
     }
@@ -57,6 +57,4 @@ const cleanImageElements = (document: Document, rtf: string, rootNode: Node): vo
         }
         return true;
     });
-};
-
-export default cleanImageElements;
+}

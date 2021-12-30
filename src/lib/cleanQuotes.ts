@@ -1,9 +1,9 @@
 /* eslint-disable no-param-reassign */
 
-import changeTagName from './changeTagName';
-import traverseElements from './traverseElements';
+import { changeTagName } from './changeTagName';
+import { traverseElements } from './traverseElements';
 
-const cleanQuotes = (rootNode: Node): void => {
+export function cleanQuotes(rootNode: Node): void {
     traverseElements(rootNode, (element) => {
         if (
             element.parentNode &&
@@ -15,6 +15,4 @@ const cleanQuotes = (rootNode: Node): void => {
 
         return true;
     });
-};
-
-export default cleanQuotes;
+}

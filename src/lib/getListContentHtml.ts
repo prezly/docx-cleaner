@@ -1,9 +1,9 @@
-import removeNodesBetweenComments from './removeNodesBetweenComments';
-import traverseElements from './traverseElements';
+import { removeNodesBetweenComments } from './removeNodesBetweenComments';
+import { traverseElements } from './traverseElements';
 
 const HEADINGS_TAG_NAMES = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6'];
 
-const getListContentHtml = (rootElement: Element): string => {
+export function getListContentHtml(rootElement: Element): string {
     const clonedElement = rootElement.cloneNode(true) as Element;
 
     if (HEADINGS_TAG_NAMES.includes(clonedElement.tagName)) {
@@ -25,6 +25,4 @@ const getListContentHtml = (rootElement: Element): string => {
     });
 
     return clonedElement.innerHTML;
-};
-
-export default getListContentHtml;
+}

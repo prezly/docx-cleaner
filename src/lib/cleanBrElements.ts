@@ -1,10 +1,10 @@
 import { LINE_FEED } from '../constants';
 
-import isComment from './isComment';
-import removeNodesBetweenComments from './removeNodesBetweenComments';
-import traverseElements from './traverseElements';
+import { isComment } from './isComment';
+import { removeNodesBetweenComments } from './removeNodesBetweenComments';
+import { traverseElements } from './traverseElements';
 
-const cleanBrElements = (rootNode: Node): void => {
+export function cleanBrElements(rootNode: Node): void {
     traverseElements(rootNode, (element) => {
         if (element.tagName !== 'BR') {
             return true;
@@ -30,6 +30,4 @@ const cleanBrElements = (rootNode: Node): void => {
 
         return false;
     });
-};
-
-export default cleanBrElements;
+}

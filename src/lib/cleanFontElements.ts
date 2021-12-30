@@ -1,7 +1,7 @@
-import changeTagName from './changeTagName';
-import traverseElements from './traverseElements';
+import { changeTagName } from './changeTagName';
+import { traverseElements } from './traverseElements';
 
-const cleanFontElements = (rootNode: Node): void => {
+export function cleanFontElements(rootNode: Node): void {
     traverseElements(rootNode, (element) => {
         if (element.tagName === 'FONT') {
             if (element.textContent) {
@@ -13,6 +13,4 @@ const cleanFontElements = (rootNode: Node): void => {
 
         return true;
     });
-};
-
-export default cleanFontElements;
+}

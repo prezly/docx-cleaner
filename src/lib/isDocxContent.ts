@@ -1,6 +1,6 @@
-import traverseElements from './traverseElements';
+import { traverseElements } from './traverseElements';
 
-const isDocxContent = (body: HTMLElement): boolean => {
+export function isDocxContent(body: HTMLElement): boolean {
     let result = false;
 
     traverseElements(body, (element) => {
@@ -17,6 +17,4 @@ const isDocxContent = (body: HTMLElement): boolean => {
     });
 
     return result;
-};
-
-export default isDocxContent;
+}

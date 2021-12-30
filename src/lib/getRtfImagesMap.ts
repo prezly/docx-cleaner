@@ -1,8 +1,8 @@
 import { RtfImagesMap } from '../types';
 
-import getRtfImagesByType from './getRtfImagesByType';
+import { getRtfImagesByType } from './getRtfImagesByType';
 
-const getRtfImagesMap = (rtf: string): RtfImagesMap => {
+export function getRtfImagesMap(rtf: string): RtfImagesMap {
     const rtfImagesMap: RtfImagesMap = {};
 
     const shppictRtfImages = getRtfImagesByType(rtf, 'i', '\\shppict');
@@ -16,6 +16,4 @@ const getRtfImagesMap = (rtf: string): RtfImagesMap => {
     }
 
     return rtfImagesMap;
-};
-
-export default getRtfImagesMap;
+}

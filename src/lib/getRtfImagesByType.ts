@@ -1,10 +1,10 @@
 import { RtfImage } from '../types';
 
-import getRtfImageHex from './getRtfImageHex';
-import getRtfImageMimeType from './getRtfImageMimeType';
-import getRtfImageSpid from './getRtfImageSpid';
+import { getRtfImageHex } from './getRtfImageHex';
+import { getRtfImageMimeType } from './getRtfImageMimeType';
+import { getRtfImageSpid } from './getRtfImageSpid';
 
-const getRtfImagesByType = (rtf: string, spidPrefix: string, type: string): RtfImage[] => {
+export function getRtfImagesByType(rtf: string, spidPrefix: string, type: string): RtfImage[] {
     const [, ...images] = rtf.split(type);
 
     return images.reduce<RtfImage[]>((rtfImages, image) => {
@@ -19,6 +19,4 @@ const getRtfImagesByType = (rtf: string, spidPrefix: string, type: string): RtfI
 
         return rtfImages;
     }, []);
-};
-
-export default getRtfImagesByType;
+}

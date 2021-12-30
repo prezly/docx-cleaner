@@ -1,11 +1,11 @@
-import getVShapes from './getVShapes';
+import { getVShapes } from './getVShapes';
 
-const normalizeSpid = (spid: string): string => {
+function normalizeSpid(spid: string): string {
     const [, , id] = spid.split('_');
     return id;
-};
+}
 
-const getVShapeSpid = (document: Document, element: Element): string | null => {
+export function getVShapeSpid(document: Document, element: Element): string | null {
     if (element.tagName === 'IMG') {
         const vShapeId = element.getAttribute('v:shapes');
         const vShapes = getVShapes(document);
@@ -42,6 +42,4 @@ const getVShapeSpid = (document: Document, element: Element): string | null => {
     }
 
     return spid;
-};
-
-export default getVShapeSpid;
+}

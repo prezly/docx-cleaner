@@ -1,7 +1,7 @@
-import getListTypeNode from './getListTypeNode';
-import isOrderedListSymbol from './isOrderedListSymbol';
+import { getListTypeNode } from './getListTypeNode';
+import { isOrderedListSymbol } from './isOrderedListSymbol';
 
-const isOrderedList = (element: Element): boolean => {
+export function isOrderedList(element: Element): boolean {
     const listTypeNode = getListTypeNode(element);
 
     if (!listTypeNode) {
@@ -9,6 +9,4 @@ const isOrderedList = (element: Element): boolean => {
     }
 
     return isOrderedListSymbol(listTypeNode.textContent || '');
-};
-
-export default isOrderedList;
+}

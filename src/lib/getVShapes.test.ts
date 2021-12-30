@@ -1,6 +1,6 @@
 import { readTestFile } from '../test-utils';
 
-import getVShapes from './getVShapes';
+import { getVShapes } from './getVShapes';
 
 const parser = new DOMParser();
 

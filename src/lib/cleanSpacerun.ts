@@ -1,6 +1,6 @@
-import generateSpaces from './generateSpaces';
+import { generateSpaces } from './generateSpaces';
 
-const cleanSpacerun = (element: Element): void => {
+export function cleanSpacerun(element: Element): void {
     const styleAttribute = element.getAttribute('style');
 
     if (styleAttribute !== 'mso-spacerun:yes') {
@@ -13,6 +13,4 @@ const cleanSpacerun = (element: Element): void => {
     if (element.parentNode) {
         element.parentNode.replaceChild(replacementNode, element);
     }
-};
-
-export default cleanSpacerun;
+}
