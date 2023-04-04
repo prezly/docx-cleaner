@@ -3,7 +3,7 @@ import { traverseElements } from './traverseElements';
 const ALLOWED_EMPTY_ELEMENTS = ['BR', 'IMG'];
 
 function isEmpty(element: Element): boolean {
-    return !ALLOWED_EMPTY_ELEMENTS.includes(element.nodeName) && !element.innerHTML.trim();
+    return !ALLOWED_EMPTY_ELEMENTS.includes(element.nodeName) && !element.innerHTML;
 }
 
 function removeIfEmpty(element: Element): void {
