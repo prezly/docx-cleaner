@@ -45,4 +45,11 @@ describe('cleanDocx', () => {
         const result = cleanDocx(html, MOCK_RTF);
         expect(result).toBe(expected);
     });
+
+    it('Preserves newline-only spans', () => {
+        const html = readTestFile('input/whitespaces-4.html');
+        const expected = readTestFile('output/whitespaces-4.html');
+        const result = cleanDocx(html, MOCK_RTF);
+        expect(result).toBe(expected);
+    });
 });
